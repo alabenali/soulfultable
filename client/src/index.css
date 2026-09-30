@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --terracotta: #4A2E14;
+  --terracotta-hover: #36200D;
+  --terracotta-light: #6A4422;
+  --bg-beige: #F7F4EE;
+  --bg-beige-dark: #ECE7DD;
+  --olive-accent: #6B705C;
+  --olive-light: #F0F3EC;
+  --olive-border: #C8CCBF;
+  --card-bg: #FFFFFF;
+  --text-dark: #2C2219;
+  --text-muted: #6E6254;
+  --border-warm: rgba(74, 46, 20, 0.09);
+  --shadow-warm: 0 16px 36px -12px rgba(74, 46, 20, 0.07), 0 4px 12px -2px rgba(74, 46, 20, 0.03);
+}
+
+body {
+  background-color: var(--bg-beige);
+  color: var(--text-dark);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  cursor: default;
+}
+
+/* Ensure clean arrow cursor for clients on static elements */
+h1, h2, h3, h4, h5, h6, p, span, div, label {
+  cursor: default;
+}
+
+a, button, input[type="submit"], input[type="radio"], input[type="checkbox"], select {
+  cursor: pointer;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  cursor: text;
+}
+
+/* Mediterranean Linen / Warm Paper Grain Subtle Texture Overlay */
+.linen-texture {
+  background-color: var(--bg-beige);
+  background-image: 
+    radial-gradient(rgba(74, 46, 20, 0.03) 1px, transparent 0),
+    radial-gradient(rgba(107, 112, 92, 0.03) 1px, transparent 0);
+  background-size: 24px 24px, 12px 12px;
+  background-position: 0 0, 6px 6px;
+}
+
+/* Organic Ceramic/Terracotta Top Banner Header Texture */
+.header-banner-texture {
+  background: linear-gradient(180deg, #FAF7F2 0%, #F3EEE4 100%);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(107, 112, 92, 0.05) 0%, transparent 70%),
+    radial-gradient(rgba(74, 46, 20, 0.02) 1.5px, transparent 0);
+  background-size: 100% 100%, 18px 18px;
+  border-bottom: 1px solid rgba(74, 46, 20, 0.06);
+}
+
+/* Heading Typography */
+.soulful-heading {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  color: var(--terracotta);
+  letter-spacing: -0.02em;
+}
+
+/* Card with Warm Shadow & Refined Micro-Border */
+.soulful-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-warm);
+  box-shadow: var(--shadow-warm);
+  border-radius: 1.5rem;
+}
+
+/* Buttons */
+.btn-terracotta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--terracotta);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(74, 46, 20, 0.15);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-terracotta:hover {
+  background-color: var(--terracotta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(74, 46, 20, 0.22);
+}
+
+.btn-terracotta:active {
+  transform: translateY(0);
+}
+
+/* Terracotta Inputs */
+.input-terracotta {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(74, 46, 20, 0.15);
+  color: var(--text-dark);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-terracotta:focus {
+  outline: none;
+  border-color: var(--terracotta-light);
+  box-shadow: 0 0 0 3px rgba(74, 46, 20, 0.1);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}

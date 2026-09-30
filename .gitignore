@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log
+.env
+.env.local
+.env.*.local
+
+# Bases de données
+*.db
+*.db-journal
+
+# Exports CSV
+*.csv
+
+# Vite
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Artefacts locaux
+.claude/
+C*claudeplans/
+query

@@ -1,0 +1,10 @@
+const net = require('net');
+const host = process.argv[2] || '127.0.0.1';
+const port = parseInt(process.argv[3], 10) || 3306;
+const sock = new net.Socket();
+sock.setTimeout(5000);
+sock.on('connect', () => { console.log('TCP CONNECTED'); sock.end(); });
+sock.on('timeout', () => { console.log('TCP TIMEOUT'); sock.destroy(); });
+sock.on('error', (e) => { console.log('TCP ERROR', e.code || e.message); });
+sock.on('close', (hadErr) => { console.log('TCP CLOSED', hadErr); });
+sock.connect(port, host);

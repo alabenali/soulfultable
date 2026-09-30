@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <defs>
+    <style>
+      .title { fill: #5b3d0a; font-family: 'Georgia', 'Times New Roman', serif; font-weight: 700; font-size:120px; }
+      .script { fill: #5b3d0a; font-family: 'Segoe Script', 'Brush Script MT', cursive; font-size:56px; }
+      .spiral { fill:none; stroke:#5b3d0a; stroke-width:8; stroke-linecap:round; }
+    </style>
+  </defs>
+  <g transform="translate(60,40)">
+    <text class="title" x="0" y="120">Soulful</text>
+    <text class="script" x="820" y="110">Table</text>
+    <g transform="translate(400,130) scale(0.9)">
+      <path class="spiral" d="M0,0 a40,40 0 1,1 1,0 m6,0 a34,34 0 1,1 1,0 m6,0 a28,28 0 1,1 1,0 m6,0 a20,20 0 1,1 1,0" />
+    </g>
+  </g>
+</svg>
