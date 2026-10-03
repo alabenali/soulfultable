@@ -35,8 +35,8 @@ const Confirmation = () => {
       </header>
 
       {/* Confirmation Content Card */}
-      <main className="w-full max-w-xl mx-auto px-4 sm:px-6 mt-4 sm:mt-6 mb-10 sm:mb-12">
-        <div className="soulful-card p-8 sm:p-12 text-center flex flex-col items-center">
+      <main className="w-full max-w-xl mx-auto px-4 sm:px-6 mt-4 sm:mt-6 mb-10 sm:mb-12 public-content">
+        <div className="soulful-card confirmation-card p-8 sm:p-12 text-center flex flex-col items-center">
           <h1 className="soulful-heading text-3xl sm:text-4xl mb-3 text-[#4A2E14]">
             Votre réservation est bien reçue
           </h1>
@@ -44,7 +44,7 @@ const Confirmation = () => {
             Vous allez recevoir un email de confirmation avec tous les détails pratiques de l'événement.
           </p>
 
-          <div className="w-full text-left bg-[#F9F7F3] p-6 rounded-xl border border-stone-200/80 mb-8 space-y-3">
+          <div className="w-full text-left bg-[#F9F7F3] p-6 rounded-xl border border-stone-200/80 mb-8 space-y-3 detail-panel">
             <h2 className="font-serif text-lg font-medium text-[#4A2E14]">Détails de votre réservation</h2>
             {reservation ? (
               <div className="space-y-1.5 text-sm text-[#2C2219]">

@@ -32,8 +32,8 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md">
+    <div className="min-h-screen flex items-center justify-center admin-login-shell px-4">
+      <div className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md admin-login-card">
         <h2 className="text-center font-serif text-2xl sm:text-3xl mb-6">
           Administration
         </h2>
@@ -52,7 +52,7 @@ const AdminLogin = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full btn-primary disabled:opacity-50"
+            className="w-full btn-terracotta disabled:opacity-50"
           >
             {loading ? 'Connexion...' : 'Se connecter'}
           </button>

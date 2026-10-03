@@ -65,8 +65,8 @@ const Register = () => {
       </header>
 
       {/* Main Form Card */}
-      <main className="w-full max-w-xl mx-auto px-4 sm:px-6 mt-4 sm:mt-6 mb-10 sm:mb-12">
-        <div className="soulful-card p-6 sm:p-10">
+      <main className="w-full max-w-xl mx-auto px-4 sm:px-6 mt-4 sm:mt-6 mb-10 sm:mb-12 public-content">
+        <div className="soulful-card form-card p-6 sm:p-10">
           <div className="max-w-md mx-auto">
             <h1 className="soulful-heading text-2xl sm:text-3xl text-center mb-2 text-[#4A2E14]">
               Réservation — Soulful Table
@@ -140,7 +140,7 @@ const Register = () => {
 
               <fieldset className="pt-2">
                 <legend className="text-xs font-semibold uppercase tracking-wider text-[#4A2E14] mb-3">Mode de paiement</legend>
-                <div className="space-y-2 bg-[#F9F7F3] p-4 rounded-xl border border-stone-200/80">
+                <div className="space-y-2 bg-[#F9F7F3] p-4 rounded-xl border border-stone-200/80 payment-options">
                   <label className="flex items-center gap-3 cursor-pointer text-sm text-[#2C2219]">
                     <input className="h-4 w-4 accent-[#4A2E14]" type="radio" name="payment" value="vente_physique" checked={form.payment === 'vente_physique'} onChange={(e) => setForm({ ...form, payment: e.target.value })} />
                     <span>Vente physique</span>

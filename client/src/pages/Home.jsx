@@ -15,8 +15,8 @@ const Home = () => {
       </header>
 
       {/* Content Card & Spacing: Placed close to the logo without huge empty gaps */}
-      <main className="w-full max-w-xl mx-auto px-4 sm:px-6 mt-4 sm:mt-6 mb-10 sm:mb-12">
-        <div className="soulful-card p-7 sm:p-10 text-center flex flex-col items-center">
+      <main className="w-full max-w-xl mx-auto px-4 sm:px-6 mt-4 sm:mt-6 mb-10 sm:mb-12 public-content">
+        <div className="soulful-card home-card p-7 sm:p-10 text-center flex flex-col items-center">
           {/* Heading in Warm Terracotta */}
           <h1 className="soulful-heading text-3xl sm:text-4xl font-normal tracking-tight mb-3 text-[#4A2E14]">
             Rejoignez la Table Soulful

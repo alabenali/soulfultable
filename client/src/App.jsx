@@ -8,7 +8,10 @@ import BackgroundLayout from './components/BackgroundLayout';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+    }}>
       <BackgroundLayout>
         <Routes>
           <Route path="/" element={<Home />} />

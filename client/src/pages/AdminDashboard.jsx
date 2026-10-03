@@ -123,6 +123,12 @@ const AdminDashboard = () => {
     );
   });
 
+  const paymentLabels = {
+    vente_physique: 'Vente physique',
+    transfert_bancaire: 'Transfert bancaire',
+    paiement_jour: 'Paiement le jour J'
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -142,8 +148,8 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-md">
+    <div className="min-h-screen admin-shell">
+      <header className="admin-header">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col items-center">
           <h1 className="text-center font-serif text-2xl sm:text-3xl mb-4">
             Administration - Réservations
@@ -158,7 +164,7 @@ const AdminDashboard = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Rechercher par nom, prénom ou email..."
-                className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-terracotta"
+                className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-terracotta admin-search"
               />
             </div>
           </div>
@@ -169,7 +175,7 @@ const AdminDashboard = () => {
         {filteredReservations.length === 0 && reservations.length > 0 ? (
           <p className="text-center text-gray-500 py-8">Aucune réservation ne correspond à votre recherche.</p>
         ) : (
-          <div className="bg-white rounded-lg shadow overflow-hidden">
+          <div className="bg-white rounded-lg shadow overflow-x-auto admin-table-shell">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -179,6 +185,7 @@ const AdminDashboard = () => {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Téléphone</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Adresse</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Paiement</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date d'inscription</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Statut</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email envoyé</th>
@@ -194,6 +201,9 @@ const AdminDashboard = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{res.telephone}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{res.adresse}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{res.email}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {paymentLabels[res.payment_method] || res.payment_method || 'Vente physique'}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{res.date_inscription}</td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <select
@@ -220,18 +230,18 @@ const AdminDashboard = () => {
         )}
       </main>
 
-      <footer className="bg-white border-t border-gray-200">
+      <footer className="bg-white border-t border-gray-200 admin-footer">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col items-center">
           <div className="flex w-full justify-between items-center">
             <button
               onClick={handleExport}
-              className="btn-primary py-2 px-4"
+              className="btn-terracotta py-2 px-4"
             >
               Exporter en CSV
             </button>
             <button
               onClick={handleLogout}
-              className="ml-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors"
+              className="ml-4 btn-secondary font-medium py-2 px-4"
             >
               Déconnexion
             </button>
